@@ -2,12 +2,13 @@
 #include "SettingsWindow.h"
 #include "About.h"
 #include "HowTo.h"
+#include "Controller.h"
 #include <stdlib.h>
 #include <iostream>
 
-namespace General {
-	class Controller;
-}
+//namespace General {
+//	class Controller;
+//}
 
 namespace GUI
 {

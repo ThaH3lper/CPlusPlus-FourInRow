@@ -1,5 +1,7 @@
 #pragma once
 #include "Settings.h"
+#include <stdlib.h>
+#include <iostream>
 
 /*
  * SettingsWindow shows the settings for the Settings so that the user can properly adjust them.
@@ -17,7 +19,7 @@ namespace GUI
 		/*Shows the settingsmenu
 		* @return returns the setting.
 		*/
-		General::Settings ShowSetting();
+		General::Settings* ShowSetting();
 	private:
 		General::Settings* settings;
 

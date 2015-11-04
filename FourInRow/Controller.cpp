@@ -4,8 +4,10 @@ General::Controller::Controller()
 {
 }
 
-General::Controller::Controller(Settings settings)
+General::Controller::Controller(Settings* settings)
 {
+	this->settings = settings;
+	system("pause");
 }
 
 void General::Controller::MakeMove(int x)

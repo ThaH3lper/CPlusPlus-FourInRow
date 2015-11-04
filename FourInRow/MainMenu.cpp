@@ -5,7 +5,6 @@ GUI::MainMenu::MainMenu()
 	howto = new HowTo();
 	about = new About();
 	settingsWindow = new SettingsWindow();
-	//controller = new General::Controller();
 	ShowMenu();
 }
 
@@ -18,7 +17,8 @@ void GUI::MainMenu::ShowMenu()
 		std::cin >> input;
 		if (input == 1)
 		{
-
+			General::Settings* settings = settingsWindow->ShowSetting();
+			controller = new General::Controller(settings); //Should be in StartGame();
 		}
 		else if (input == 2)
 			howto->PrintHowTo();

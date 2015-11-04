@@ -4,7 +4,6 @@
 #include "Player.h"
 #include "Board.h"
 #include "BoardPanel.h"
-#include "MainMenu.h"
 
 namespace General
 {
@@ -21,7 +20,7 @@ namespace General
 		/*Constructor
 		* @param settings you want to use
 		*/
-		Controller(Settings settings);
+		Controller(Settings* settings);
 
 		/*Makes played move
 		* @param x value of the played move
@@ -42,7 +41,7 @@ namespace General
 		Player* playerB;
 		Board* board;
 		GUI::BoardPanel* boardPanel;
-		GUI::MainMenu* mainMenu;
+		//GUI::MainMenu* mainMenu;
 		Settings* settings;
 
 		Controller(const Controller& that);
