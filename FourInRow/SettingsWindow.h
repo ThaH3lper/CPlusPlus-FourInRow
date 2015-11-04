@@ -1,0 +1,28 @@
+#pragma once
+#include "Settings.h"
+
+/*
+ * SettingsWindow shows the settings for the Settings so that the user can properly adjust them.
+ */
+
+namespace GUI
+{
+	class SettingsWindow
+	{
+	public:
+		/*Constructor
+		*/
+		SettingsWindow();
+
+		/*Shows the settingsmenu
+		* @return returns the setting.
+		*/
+		General::Settings ShowSetting();
+	private:
+		General::Settings* settings;
+
+		SettingsWindow(const SettingsWindow& that);
+		SettingsWindow& operator = (const SettingsWindow& that);
+	};
+}
+
