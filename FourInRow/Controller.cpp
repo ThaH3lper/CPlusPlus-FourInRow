@@ -50,12 +50,16 @@ General::Controller::Controller(Settings* settings)
 			system("cls");
 			boardPanel->DrawField((*board));
 			xMove = currentPlayer->GetMove();
+
 		} while (!MakeMove(xMove, (*currentPlayer)));
 
 		yMove = board->SetSquare(xMove, currentPlayer->symbol);
+
+		boardPanel->DrawLastMove(xMove, yMove);
 	}
 	system("cls");
 	boardPanel->DrawField((*board));
+	PrintText("Player " + currentPlayer->name + " Wins!");
 	system("pause");
 }
 
@@ -71,18 +75,14 @@ bool General::Controller::MakeMove(int x, Player& player)
 
 bool General::Controller::CalculateWin(int x, int y)
 {
-	if (CheckPath(x, y, 1, 0)) return true;
-	if (CheckPath(x, y, 1, 1)) return true;
-	if (CheckPath(x, y, 0, 1)) return true;
-	if (CheckPath(x, y, -1, 1)) return true;
-	if (CheckPath(x, y, -1, 0)) return true;
-	if (CheckPath(x, y, -1, -1)) return true;
-	if (CheckPath(x, y, 0, -1)) return true;
-	if (CheckPath(x, y, 1, -1)) return true;
+	if (CheckPath(x, y, 1, 0) + CheckPath(x, y, -1, 0) - 1 >= settings->winAmount) return true;
+	if (CheckPath(x, y, 1, 1) + CheckPath(x, y, -1, -1) - 1 >= settings->winAmount) return true;
+	if (CheckPath(x, y, 0, 1) + CheckPath(x, y, 0, -1) - 1 >= settings->winAmount) return true;
+	if (CheckPath(x, y, -1,1) + CheckPath(x, y, 1, -1) - 1 >= settings->winAmount) return true;
 	return false;
 }
 
-bool General::Controller::CheckPath(int x, int y, int xDir, int yDir)
+int General::Controller::CheckPath(int x, int y, int xDir, int yDir)
 {
 	char symbol = board->field[y][x];
 	int amount = 0;
@@ -96,11 +96,10 @@ bool General::Controller::CheckPath(int x, int y, int xDir, int yDir)
 		if (symbol == '-')
 			break;
 	}
-	if (amount >= settings->winAmount)
-		return true;
-	return false;
+	return amount;
 }
 
 void General::Controller::PrintText(std::string str)
 {
+	std::cout << str << std::endl;
 }

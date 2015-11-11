@@ -37,7 +37,7 @@ namespace General
 		*/
 		bool CalculateWin(int x, int y);
 
-		bool CheckPath(int x, int y, int xDir, int yDir);
+		int CheckPath(int x, int y, int xDir, int yDir);
 
 		/*Prints text
 		* @param prints received text

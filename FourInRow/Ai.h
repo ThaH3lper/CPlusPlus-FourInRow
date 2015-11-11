@@ -3,6 +3,8 @@
 #include "Board.h"
 #include <stdlib.h>
 #include <time.h>
+#include <chrono>
+#include <thread>
 
 
 namespace General
