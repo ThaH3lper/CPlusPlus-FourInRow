@@ -1,6 +1,6 @@
 #include "Remote.h"
 
-General::Remote::Remote()
+General::Remote::Remote(std::string name, char symbol) : Player(name, symbol)
 {
 }
 

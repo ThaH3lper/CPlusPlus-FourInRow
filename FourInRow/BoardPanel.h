@@ -1,5 +1,8 @@
 #pragma once
 #include "Board.h"
+#include <stdlib.h>
+#include <iostream>
+#include <string>
 
 namespace GUI
 {
@@ -16,7 +19,7 @@ namespace GUI
 		/*Draws the field
 		* @param Input the board you want to draw.
 		*/
-		void DrawField(General::Board board);
+		void DrawField(const General::Board& board);
 
 		/*Draws the last move made with a different icon
 		* @param x: the X coordinate

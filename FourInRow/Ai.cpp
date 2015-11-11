@@ -1,10 +1,12 @@
 #include "Ai.h"
 
-General::Ai::Ai()
+General::Ai::Ai(std::string name, char symbol, Board* board) : Player(name, symbol)
 {
+	this->board = board;
 }
 
 int General::Ai::GetMove()
 {
-	return 0;
+	srand(time(NULL));
+	return rand() % board->field[0].size();
 }

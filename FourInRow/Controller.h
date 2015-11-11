@@ -4,6 +4,11 @@
 #include "Player.h"
 #include "Board.h"
 #include "BoardPanel.h"
+#include "Human.h"
+#include "Remote.h"
+#include "Ai.h"
+#include <stdlib.h>
+#include <iostream>
 
 namespace General
 {
@@ -25,12 +30,14 @@ namespace General
 		/*Makes played move
 		* @param x value of the played move
 		*/
-		void MakeMove(int x);
+		bool MakeMove(int x, Player& player);
 
 		/*Checks if any player have won the game
 		* @returns true or false depending on if anyone won
 		*/
-		bool CalculateWin();
+		bool CalculateWin(int x, int y);
+
+		bool CheckPath(int x, int y, int xDir, int yDir);
 
 		/*Prints text
 		* @param prints received text

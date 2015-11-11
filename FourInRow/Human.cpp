@@ -1,10 +1,13 @@
 #include "Human.h"
 
-General::Human::Human()
+General::Human::Human(std::string name, char symbol):Player(name, symbol)
 {
 }
 
 int General::Human::GetMove()
 {
-	return 0;
+	std::cout << "Type column " << name << ": ";
+	int i; 
+	std::cin >> i;
+	return i;
 }

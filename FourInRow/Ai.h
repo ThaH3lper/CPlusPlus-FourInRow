@@ -1,6 +1,8 @@
 #pragma once
 #include "Player.h"
 #include "Board.h"
+#include <stdlib.h>
+#include <time.h>
 
 
 namespace General
@@ -14,7 +16,7 @@ namespace General
 	public:
 		/*Constructor
 		*/
-		Ai();
+		Ai(std::string name, char symbol, Board* board);
 
 		/*Gets move
 		* @return the move that the AI calculated.

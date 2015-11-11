@@ -1,7 +1,9 @@
 #include "Player.h"
 
-General::Player::Player()
+General::Player::Player(std::string name, char symbol)
 {
+	this->name = name;
+	this->symbol = symbol;
 }
 
 int General::Player::GetMove()

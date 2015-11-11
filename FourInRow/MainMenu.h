@@ -28,7 +28,7 @@ namespace GUI
 
 		/*starts the game and creates a controller
 		*/
-		void StartGame();
+		void StartGame(General::Settings* settings);
 
 	private:
 		HowTo* howto;

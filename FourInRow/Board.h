@@ -1,5 +1,7 @@
 #pragma once
-
+#include <stdlib.h>
+#include <iostream>
+#include <vector>
 namespace General
 {
 	/*
@@ -10,15 +12,15 @@ namespace General
 	public:
 		/*Construktor
 		*/
-		Board();
+		Board(int columns, int rows);
 
-		int field; //2D Array
+		std::vector<std::vector<char>> field; //2D Array
 
 		/* Sets the square to used
 		* @param x: The x coordinate
 		* @param y: The y coordinate
 		*/
-		void SetSquare(int x, int y);
+		int SetSquare(int x, char c);
 
 		/*Checks if received move is valid
 		* @return True or false depending on received move

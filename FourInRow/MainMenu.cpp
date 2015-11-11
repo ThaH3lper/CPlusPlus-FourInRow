@@ -16,10 +16,7 @@ void GUI::MainMenu::ShowMenu()
 		std::cout << "Menu:" << std::endl << "1. Play" << std::endl << "2. How to play" << std::endl << "3. About" << std::endl << "4. Exit" << std::endl;
 		std::cin >> input;
 		if (input == 1)
-		{
-			General::Settings* settings = settingsWindow->ShowSetting();
-			controller = new General::Controller(settings); //Should be in StartGame();
-		}
+			StartGame(settingsWindow->ShowSetting());
 		else if (input == 2)
 			howto->PrintHowTo();
 		else if (input == 3)
@@ -28,6 +25,7 @@ void GUI::MainMenu::ShowMenu()
 	}
 }
 
-void GUI::MainMenu::StartGame()
+void GUI::MainMenu::StartGame(General::Settings* settings)
 {
+	controller = new General::Controller(settings);
 }

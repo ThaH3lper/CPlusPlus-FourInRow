@@ -11,16 +11,15 @@ namespace General
 	public:
 		/*Constructor
 		*/
-		Player();
+		Player(std::string name, char symbol);
 
 		/*Abstract method
 		* @return the players move
 		*/
 		virtual int GetMove();
 
-	protected:
 		std::string name;
-
+		char symbol;
 	private:
 		Player(const Player& that);
 		Player& operator = (const Player& that);

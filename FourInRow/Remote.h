@@ -14,7 +14,7 @@ namespace General
 	public:
 		/*Constructor
 		*/
-		Remote();
+		Remote(std::string name, char symbol);
 
 		/*Gets move
 		* @return the players move

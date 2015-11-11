@@ -15,7 +15,7 @@ namespace General
 	public:
 		/*Constructor
 		*/
-		Human();
+		Human(std::string name, char symbol);
 
 		/*Gets move from boardpanel that player clicked
 		* @return int value for move
