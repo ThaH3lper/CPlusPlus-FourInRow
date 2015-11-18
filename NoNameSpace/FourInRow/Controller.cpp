@@ -1,14 +1,14 @@
 #include "Controller.h"
 
-General::Controller::Controller()
+Controller::Controller()
 {
 }
 
-General::Controller::Controller(Settings* settings)
+Controller::Controller(Settings* settings)
 {
 	this->settings = settings;
 	board = new Board(settings->columns, settings->rows);
-	boardPanel = new GUI::BoardPanel();
+	boardPanel = new BoardPanel();
 	switch (settings->gameType)
 	{
 	case 1:
@@ -25,11 +25,11 @@ General::Controller::Controller(Settings* settings)
 		break;
 	case 4:
 		playerA = new Human(settings->playerA, 'O');
-		playerB = new Remote(settings->playerB, 'X');
+		playerB = new Remote(settings->playerB, 'X', true, board);
 		break;
 	case 5:
 		playerA = new Ai(settings->playerA, 'O', board);
-		playerB = new Remote(settings->playerB, 'X');
+		playerB = new Remote(settings->playerB, 'X', true, board);
 		break;
 	default:
 		break;
@@ -63,7 +63,7 @@ General::Controller::Controller(Settings* settings)
 	system("pause");
 }
 
-bool General::Controller::MakeMove(int x, Player& player)
+bool Controller::MakeMove(int x, Player& player)
 {
 	if (x >= 0 && x < board->field[0].size())
 	{
@@ -73,7 +73,7 @@ bool General::Controller::MakeMove(int x, Player& player)
 	return false;
 }
 
-bool General::Controller::CalculateWin(int x, int y)
+bool Controller::CalculateWin(int x, int y)
 {
 	if (CheckPath(x, y, 1, 0) + CheckPath(x, y, -1, 0) - 1 >= settings->winAmount) return true;
 	if (CheckPath(x, y, 1, 1) + CheckPath(x, y, -1, -1) - 1 >= settings->winAmount) return true;
@@ -82,7 +82,7 @@ bool General::Controller::CalculateWin(int x, int y)
 	return false;
 }
 
-int General::Controller::CheckPath(int x, int y, int xDir, int yDir)
+int Controller::CheckPath(int x, int y, int xDir, int yDir)
 {
 	char symbol = board->field[y][x];
 	int amount = 0;
@@ -99,7 +99,7 @@ int General::Controller::CheckPath(int x, int y, int xDir, int yDir)
 	return amount;
 }
 
-void General::Controller::PrintText(std::string str)
+void Controller::PrintText(std::string str)
 {
 	std::cout << str << std::endl;
 }

@@ -2,6 +2,11 @@
 #include "Player.h"
 #include "Client.h"
 #include "Server.h"
+#include "Board.h"
+#include <stdlib.h>
+#include <time.h>
+#include <chrono>
+#include <thread>
 
 namespace General
 {
@@ -14,7 +19,7 @@ namespace General
 	public:
 		/*Constructor
 		*/
-		Remote(std::string name, char symbol);
+		Remote(std::string name, char symbol, bool createServer, Board* board);
 
 		/*Gets move
 		* @return the players move
@@ -24,6 +29,7 @@ namespace General
 	private:
 		Network::Server* server;
 		Network::Client* client;
+		Board* board;
 
 		Remote(const Remote& that);
 		Remote& operator = (const Remote& that);

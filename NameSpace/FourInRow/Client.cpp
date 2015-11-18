@@ -2,10 +2,12 @@
 
 Network::Client::Client()
 {
+
 }
 
 void Network::Client::SendMove(int x, int y)
 {
+
 }
 
 int Network::Client::GetMove()
@@ -20,4 +22,5 @@ bool Network::Client::WaitForOpponent()
 
 void Network::Client::Connect(std::string ip, int port)
 {
+
 }
