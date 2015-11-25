@@ -15,23 +15,12 @@ public:
 	* @param x: sent x value
 	* @param y: sent y value
 	*/
-	void SendMove(int x, int y);
+	void SendMove(int x);
 
 	/*Gets move from server
 	* @Return move from server
 	*/
 	int GetMove();
-
-	/*Makes the game wait for an opponent
-	* @return true or false depending on state of other player
-	*/
-	bool WaitForOpponent();
-
-	/*Connects client to server
-	* @param Server IP
-	* @param Server port
-	*/
-	void Connect(std::string ip, int port);
 
 private:
 	Client(const Client& that);

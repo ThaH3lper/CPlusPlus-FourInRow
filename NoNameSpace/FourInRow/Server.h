@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <thread>
 #include "Client.h"
 
 
@@ -20,8 +21,8 @@ public:
 private:
 	std::string ip;
 	int port;
-	Client* clientA;
-	Client* clientB;
+	std::string ipClientA;
+	std::string ipClientB;
 
 	Server(const Server& that);
 	Server& operator = (const Server& that);

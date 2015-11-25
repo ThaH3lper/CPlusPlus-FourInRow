@@ -18,17 +18,18 @@ class Remote :
 public:
 	/*Constructor
 	*/
-	Remote(std::string name, char symbol, bool createServer, Board* board);
+	Remote(std::string name, char symbol, bool createServer);
 
 	/*Gets move
 	* @return the players move
 	*/
 	int GetMove() override;
 
+	void SendMove(int x);
+
 private:
 	Server* server;
 	Client* client;
-	Board* board;
 
 	Remote(const Remote& that);
 	Remote& operator = (const Remote& that);

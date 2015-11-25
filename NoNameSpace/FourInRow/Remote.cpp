@@ -1,16 +1,18 @@
 #include "Remote.h"
 
-Remote::Remote(std::string name, char symbol, bool createServer, Board* board) : Player(name, symbol)
+Remote::Remote(std::string name, char symbol, bool createServer) : Player(name, symbol)
 {
-	if (server)
+	if (createServer)
 		server = new Server();
 	client = new Client();
-	this->board = board;
 }
 
 int Remote::GetMove()
 {
-	std::this_thread::sleep_for(std::chrono::milliseconds(501));
-	srand(time(NULL));
-	return rand() % board->field[0].size();
+	return client->GetMove();
+}
+
+void Remote::SendMove(int x)
+{
+	client->SendMove(x);
 }

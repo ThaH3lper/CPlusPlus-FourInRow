@@ -25,11 +25,11 @@ Controller::Controller(Settings* settings)
 		break;
 	case 4:
 		playerA = new Human(settings->playerA, 'O');
-		playerB = new Remote(settings->playerB, 'X', true, board);
+		playerB = new Remote(settings->playerB, 'X', true);
 		break;
 	case 5:
 		playerA = new Ai(settings->playerA, 'O', board);
-		playerB = new Remote(settings->playerB, 'X', true, board);
+		playerB = new Remote(settings->playerB, 'X', true);
 		break;
 	default:
 		break;

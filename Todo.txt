@@ -1,0 +1,4 @@
+Todo:
+Exception class
+Objekt diagram
+Assossations diagram med namespace
