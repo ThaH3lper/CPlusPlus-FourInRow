@@ -39,6 +39,7 @@ Controller::Controller(Settings* settings)
 		currentPlayer = playerB;
 
 	int xMove = 0, yMove = 0;
+	bool draw = false;
 	while (!CalculateWin(xMove, yMove))
 	{
 		if (currentPlayer == playerA)
@@ -51,19 +52,43 @@ Controller::Controller(Settings* settings)
 			boardPanel->DrawField((*board));
 			xMove = currentPlayer->GetMove();
 
-		} while (!MakeMove(xMove, (*currentPlayer)));
+		} while (!IsValideMove(xMove));
 
 		yMove = board->SetSquare(xMove, currentPlayer->symbol);
 
 		boardPanel->DrawLastMove(xMove, yMove);
+		
+		try{
+			IsBoardFull();
+		}
+		catch (BoardFullException exception){
+			std::cout << exception.errorMsg << std::endl;
+			draw = true;
+			break;
+		}
 	}
-	system("cls");
-	boardPanel->DrawField((*board));
-	PrintText("Player " + currentPlayer->name + " Wins!");
+	if (!draw)
+	{
+		system("cls");
+		boardPanel->DrawField((*board));
+		PrintText("Player " + currentPlayer->name + " Wins!");
+	}
 	system("pause");
 }
 
-bool Controller::MakeMove(int x, Player& player)
+void Controller::IsBoardFull()
+{
+	bool full = true;
+	for (int i = 0; i < board->field[0].size(); i++)
+	{
+		if (IsValideMove(i))
+			full = false;
+	}
+	if (full)
+		throw BoardFullException();
+}
+
+bool Controller::IsValideMove(int x)
 {
 	if (x >= 0 && x < board->field[0].size())
 	{

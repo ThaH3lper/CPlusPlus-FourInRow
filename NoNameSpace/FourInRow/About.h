@@ -19,7 +19,6 @@ public:
 	*/ 
 	void ShowAbout();
 private:
-
 	About(const About& that);
 	About& operator = (const About& that);
 };

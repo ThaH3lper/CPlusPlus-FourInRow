@@ -7,6 +7,7 @@
 #include "Human.h"
 #include "Remote.h"
 #include "Ai.h"
+#include "BoardFullException.h"
 #include <stdlib.h>
 #include <iostream>
 
@@ -28,7 +29,7 @@ public:
 	/*Makes played move
 	* @param x value of the played move
 	*/
-	bool MakeMove(int x, Player& player);
+	bool IsValideMove(int x);
 
 	/*Checks if any player have won the game
 	* @returns true or false depending on if anyone won
@@ -36,6 +37,8 @@ public:
 	bool CalculateWin(int x, int y);
 
 	int CheckPath(int x, int y, int xDir, int yDir);
+
+	void IsBoardFull();
 
 	/*Prints text
 	* @param prints received text

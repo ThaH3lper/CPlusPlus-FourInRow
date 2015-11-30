@@ -121,6 +121,7 @@
     <ClInclude Include="About.h" />
     <ClInclude Include="Ai.h" />
     <ClInclude Include="Board.h" />
+    <ClInclude Include="BoardFullException.h" />
     <ClInclude Include="BoardPanel.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="Controller.h" />
@@ -137,6 +138,7 @@
     <ClCompile Include="About.cpp" />
     <ClCompile Include="Ai.cpp" />
     <ClCompile Include="Board.cpp" />
+    <ClCompile Include="BoardFullException.cpp" />
     <ClCompile Include="BoardPanel.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Controller.cpp" />

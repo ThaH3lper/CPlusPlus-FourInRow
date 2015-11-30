@@ -1,4 +1,7 @@
 Todo:
-Exception class
+CommentEverything
+Deconstructors/Memoryleaks
+Private
+
 Objekt diagram
 Assossations diagram med namespace
