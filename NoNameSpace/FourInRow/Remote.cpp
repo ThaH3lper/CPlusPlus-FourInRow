@@ -6,6 +6,12 @@ Remote::Remote(std::string name, char symbol, bool createServer) : Player(name, 
 		server = new Server();
 	client = new Client();
 }
+Remote::~Remote()
+{
+	if (server != nullptr)
+		delete server;
+	delete client;
+}
 
 int Remote::GetMove()
 {

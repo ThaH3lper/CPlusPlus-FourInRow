@@ -10,19 +10,21 @@
 /*
 *The “AI” class is a subclass from the “Player” which it inherits from. It’s used to generate moves for an A.I. Player.
 */
-class Ai :
-	public Player
+class Ai : public Player
 {
 public:
-	/*Constructor
-	*/
+
+	/* Constructor.
+	 */
 	Ai(std::string name, char symbol, Board* board);
 
-	/*Gets move
-	* @return the move that the AI calculated.
-	*/
+	/* Gets move that ai made.
+	 * @return the move that the AI calculated.
+	 */
 	int GetMove() override;
+
 private:
+
 	Board* board;
 
 	Ai(const Ai& that);

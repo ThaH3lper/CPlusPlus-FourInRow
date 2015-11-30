@@ -10,27 +10,29 @@
 class BoardPanel
 {
 public:
-	/*Constructor
-	*/
+
+	/* Constructor.
+	 */
 	BoardPanel();
 
-	/*Draws the field
-	* @param Input the board you want to draw.
-	*/
+	/* Draws the field.
+	 * @param Input the board you want to draw.
+	 */
 	void DrawField(const Board& board);
 
-	/*Draws the last move made with a different icon
-	* @param x: the X coordinate
-	* @param y: the Y coordinate
-	*/
+	/* Draws the last move made with a different icon.
+	 * @param x: the X coordinate.
+	 * @param y: the Y coordinate.
+	 */
 	void DrawLastMove(int x, int y);
 
-	/*Returns the column which a user pressed
-	* @returns X value for column.
-	*/
+	/* Returns the column which a user pressed.
+	 * @returns X value for column.
+	 */
 	int GetClickedColumn();
 
 private:
+
 	BoardPanel(const BoardPanel& that);
 	BoardPanel& operator = (const BoardPanel& that);
 };

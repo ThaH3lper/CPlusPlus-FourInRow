@@ -4,6 +4,16 @@ Controller::Controller()
 {
 }
 
+Controller::~Controller()
+{
+	delete playerA;
+	delete playerB;
+	delete board;
+	delete boardPanel;
+	delete settings;
+	settings = nullptr;
+}
+
 Controller::Controller(Settings* settings)
 {
 	this->settings = settings;

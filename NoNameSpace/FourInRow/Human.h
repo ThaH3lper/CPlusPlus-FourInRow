@@ -8,20 +8,20 @@
 */
 
 
-class Human :
-	public Player
+class Human : public Player
 {
 public:
-	/*Constructor
-	*/
+
+	/* Constructor.
+	 */
 	Human(std::string name, char symbol);
 
-	/*Gets move from boardpanel that player clicked
-	* @return int value for move
-	*/
+	/* Gets move from boardpanel that player clicked.
+	 * @return int value for move.
+	 */
 	int GetMove() override;
+
 private:
-	BoardPanel* boardPanel;
 
 	Human(const Human& that);
 	Human& operator = (const Human& that);

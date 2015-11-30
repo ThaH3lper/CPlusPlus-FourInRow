@@ -10,15 +10,18 @@
 class SettingsWindow
 {
 public:
-	/*Constructor
-	*/
+
+	/* Constructor.
+	 */
 	SettingsWindow();
 
-	/*Shows the settingsmenu
-	* @return returns the setting.
-	*/
+	/* Shows the settingsmenu.
+	 * @return returns the setting.
+	 */
 	Settings* ShowSetting();
+
 private:
+
 	Settings* settings;
 
 	SettingsWindow(const SettingsWindow& that);

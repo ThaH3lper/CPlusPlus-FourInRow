@@ -10,15 +10,17 @@
 class Server
 {
 public:
-	/*Constructor
-	*/
+
+	/* Constructor.
+	 */
 	Server();
 
-	/*Listens for packages from clients and send them back to clients
-	*/
+	/* Listens for packages from clients and send them back to clients.
+	 */
 	void PackageListener();
 
 private:
+
 	std::string ip;
 	int port;
 	std::string ipClientA;

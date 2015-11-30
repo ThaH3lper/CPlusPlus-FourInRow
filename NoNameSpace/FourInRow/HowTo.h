@@ -11,14 +11,17 @@
 class HowTo
 {
 public:
-	/*Constructor
-	*/
+
+	/* Constructor.
+	 */
 	HowTo();
 
-	/*Prints howto Text
-	*/
+	/* Prints howto Text.
+	 */
 	void PrintHowTo();
+
 private:
+
 	std::string howtoText;
 
 	HowTo(const HowTo& that);

@@ -9,24 +9,27 @@
 class Board
 {
 public:
-	/*Construktor
-	*/
+
+	/* Construktor.
+	 */
 	Board(int columns, int rows);
 
-	std::vector<std::vector<char>> field; //2D Array
-
-	/* Sets the square to used
-	* @param x: The x coordinate
-	* @param y: The y coordinate
-	*/
+	/* Sets the square to used.
+	 * @param x: The x coordinate.
+	 * @param c: The symbol to set.
+	 */
 	int SetSquare(int x, char c);
 
-	/*Checks if received move is valid
-	* @return True or false depending on received move
-	*/
+	/* Checks if received move is valid.
+	 * @return True or false depending on received move.
+	 */
 	bool IsValidMove();
 
+	//2D array for the game filed.
+	std::vector<std::vector<char>> field;
+
 private:
+
 	Board(const Board& that);
 	Board& operator = (const Board& that);
 };

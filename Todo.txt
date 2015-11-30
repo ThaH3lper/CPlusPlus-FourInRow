@@ -1,7 +1,7 @@
 Todo:
-CommentEverything
-Deconstructors/Memoryleaks
-Private
+CommentEverything [DONE] -> want to be fancy? comment contstructor params!
+Deconstructors/Memoryleaks [DONE]
+Private [DONE]
 
-Objekt diagram
-Assossations diagram med namespace
+-> Objekt diagram
+-> Assossations diagram med namespace

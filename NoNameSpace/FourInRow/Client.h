@@ -7,22 +7,23 @@
 class Client
 {
 public:
-	/*Constructor
-	*/
+
+	/* Constructor.
+	 */
 	Client();
 
-	/*Sends move to server
-	* @param x: sent x value
-	* @param y: sent y value
-	*/
+	/* Sends move to server.
+	 * @param x: sent x value.
+	 */
 	void SendMove(int x);
 
-	/*Gets move from server
-	* @Return move from server
-	*/
+	/* Gets move from server.
+	 * @Return move from server.
+	 */
 	int GetMove();
 
 private:
+
 	Client(const Client& that);
 	Client& operator = (const Client& that);
 };

@@ -8,8 +8,9 @@
 class Settings
 {
 public:
-	/*Constructor
-	*/
+
+	/* Constructor
+	 */
 	Settings();
 
 	std::string playerA;

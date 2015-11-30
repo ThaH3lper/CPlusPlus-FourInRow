@@ -6,30 +6,31 @@
 #include <stdlib.h>
 #include <iostream>
 
-//namespace General {
-//	class Controller;
-//}
-
-
 /*
 * Creates the main menu, with different buttons. From here, players can navigate to a set-up screen and a how-to screen among other.
 */
 class MainMenu
 {
 public:
-	/*Constructor
-	*/
+
+	/* Constructor.
+	 */
 	MainMenu();
 
-	/*Shows menu
-	*/
+	/* Deconstructor.
+	 */
+	~MainMenu();
+
+	/* Shows menu.
+	 */
 	void ShowMenu();
 
-	/*starts the game and creates a controller
-	*/
+	/* Starts the game and creates a controller.
+	 */
 	void StartGame(Settings* settings);
 
 private:
+
 	HowTo* howto;
 	About* about;
 	SettingsWindow* settingsWindow;
